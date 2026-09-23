@@ -1,0 +1,23 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e .
+      - run: python -m compileall -q src
+      - run: python -m unittest discover -s tests -v
+      - run: resolution-evaluate examples/knowledge.synthetic.json examples/cases.synthetic.json --output evaluation.json
+      - run: python -c 'import json; d=json.load(open("evaluation.json")); assert d["cases"] == 6 and d["escalated"] == 3 and d["declared_accepted_answers"] == 2'

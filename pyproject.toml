@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "a2z-resolution-engine"
+version = "0.1.0"
+description = "Arabic–English support resolution kernel with approved knowledge and conservative escalation"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+authors = [{name = "Ahmed Hassan"}]
+dependencies = []
+
+[project.scripts]
+resolution-engine = "resolution_engine.server:main"
+resolution-evaluate = "resolution_engine.evaluate:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "articles": [
+    {
+      "id": "en-product-guide",
+      "locale": "en",
+      "questions": ["Where can I find the product user guide?", "How do I read the product user guide?"],
+      "answer": "The user guide is available from the product documentation page.",
+      "source": "https://example.invalid/product-guide",
+      "approved": true,
+      "valid_until": "2099-12-31"
+    },
+    {
+      "id": "ar-product-guide",
+      "locale": "ar",
+      "questions": ["ازاي اشوف دليل استخدام المنتج", "فين دليل استخدام المنتج"],
+      "answer": "دليل الاستخدام متاح في صفحة توثيق المنتج.",
+      "source": "https://example.invalid/ar/product-guide",
+      "approved": true,
+      "valid_until": "2099-12-31"
+    },
+    {
+      "id": "en-shipping",
+      "locale": "en",
+      "questions": ["How long does standard shipping take?"],
+      "answer": "The fictional standard-shipping window in this demo is three to five business days.",
+      "source": "https://example.invalid/shipping",
+      "approved": true,
+      "valid_until": "2099-12-31"
+    },
+    {
+      "id": "en-retired-policy",
+      "locale": "en",
+      "questions": ["What is the retired return policy?"],
+      "answer": "This retired answer must never be served.",
+      "source": "https://example.invalid/retired-policy",
+      "approved": false,
+      "valid_until": "2020-01-01"
+    }
+  ]
+}

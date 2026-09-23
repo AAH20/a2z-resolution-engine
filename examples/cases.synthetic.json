@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-09-24",
+  "modeled_costs_usd": {"per_case": "0.02", "per_escalation": "1.50"},
+  "cases": [
+    {"ticket": {"id": "T-001", "locale": "en", "text": "Where is the product user guide?"}, "expected_decision": "answer", "expected_article_id": "en-product-guide", "declared_accepted": true},
+    {"ticket": {"id": "T-002", "locale": "ar", "text": "ازاي اشوف دليل استخدام المنتج"}, "expected_decision": "answer", "expected_article_id": "ar-product-guide", "declared_accepted": true},
+    {"ticket": {"id": "T-003", "locale": "en", "text": "How long does standard shipping take?"}, "expected_decision": "answer", "expected_article_id": "en-shipping", "declared_accepted": false},
+    {"ticket": {"id": "T-004", "locale": "en", "text": "How do I refund my card?"}, "expected_decision": "escalate", "expected_article_id": null, "declared_accepted": false},
+    {"ticket": {"id": "T-005", "locale": "ar", "text": "كيف اغير كلمة المرور"}, "expected_decision": "escalate", "expected_article_id": null, "declared_accepted": false},
+    {"ticket": {"id": "T-006", "locale": "en", "text": "Does your app support Klingon?"}, "expected_decision": "escalate", "expected_article_id": null, "declared_accepted": false}
+  ]
+}
