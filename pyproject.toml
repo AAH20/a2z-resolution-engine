@@ -14,6 +14,7 @@ dependencies = []
 [project.scripts]
 resolution-engine = "resolution_engine.server:main"
 resolution-evaluate = "resolution_engine.evaluate:main"
+resolution-deploy = "resolution_engine.deploy:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
