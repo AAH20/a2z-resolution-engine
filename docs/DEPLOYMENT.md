@@ -59,7 +59,7 @@ The same local key must be used for preparation and send because the database st
 ## Production release gates
 
 1. Obtain the customer’s written pilot scope and OAuth authorization. Secure the local key, token, approved knowledge and database; use a restricted operator host and an encrypted volume.
-2. Add authenticated reviewer identities, separate reviewer and sender roles, and a controlled approval UI. The current CLI accepts a reviewer name as text only.
+2. Replace local bearer tokens with enterprise authenticated reviewer identities and controlled sessions. The [Resolution Relay local console](RESOLUTION_RELAY.md) supplies separate operator and reviewer tokens with an exact-draft preview, while the CLI still accepts a reviewer name as text. Keep the sender on a separate role and host.
 3. Add ticket ingestion with cursor checkpoints, rate-limit handling, retention controls, and sensitive-data review. The current `prepare` command takes a single local ticket snapshot; it never synchronizes a helpdesk.
 4. Add recorded customer follow-up and human adjudication under a locked measurement protocol. Export consented evidence to Outcome Fabric and measure accepted resolutions, rework, escalations and total delivery cost.
 5. Test operational recovery, Zendesk permission changes, conflict responses, duplicate events and incident procedures with the customer before any unattended operation.

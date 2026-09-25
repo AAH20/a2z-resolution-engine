@@ -15,6 +15,10 @@ dependencies = []
 resolution-engine = "resolution_engine.server:main"
 resolution-evaluate = "resolution_engine.evaluate:main"
 resolution-deploy = "resolution_engine.deploy:main"
+resolution-relay = "resolution_engine.relay:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+resolution_engine = ["relay.html", "relay.js"]

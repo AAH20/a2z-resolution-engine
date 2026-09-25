@@ -215,6 +215,16 @@ class DeployStore:
                 "verified_accepted_resolutions": None,
                 "claim_boundary": "Operator declarations are not authenticated customer outcomes or independently verified resolutions."}
 
+    def list_drafts(self, limit: int = 100) -> list[dict]:
+        """Metadata-only queue; ticket text and IDs are never returned from storage."""
+        if not isinstance(limit, int) or not 1 <= limit <= 500:
+            raise ValueError("limit must be between 1 and 500")
+        with closing(sqlite3.connect(self.db)) as conn:
+            conn.row_factory = sqlite3.Row
+            rows = conn.execute("""SELECT draft_id,status,article_id,source_stamp,reviewer,created_at,updated_at
+                                   FROM drafts ORDER BY created_at DESC,draft_id DESC LIMIT ?""", (limit,)).fetchall()
+        return [dict(row) for row in rows]
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Human-reviewed Zendesk deployment path")
